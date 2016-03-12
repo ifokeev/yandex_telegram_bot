@@ -18,46 +18,6 @@ RailsAdmin.config do |config|
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
-  config.included_models = %w[Product Image Order ActsAsTaggableOn::Tag]
-
-  config.model Image do
-    edit do
-      field :file, :refile
-    end
-  end
-
-  config.model Product do
-    configure :base_tags do
-      visible false
-    end
-
-    show do 
-      configure :color_list do
-        visible false
-      end
-
-      configure :category_list do
-        visible false
-      end
-    end
-
-    edit do
-      configure :colors do
-        visible false
-      end
-
-      configure :categories do
-        visible false
-      end
-
-      fields_of_type :tag_list do
-        partial 'tag_list_with_autocomplete'
-
-        # the option sets max count of suggestions (default is 100); set -1 to abolish the limit
-        ratl_max_suggestions -1
-      end
-    end
-  end
 
   config.actions do
     dashboard                     # mandatory

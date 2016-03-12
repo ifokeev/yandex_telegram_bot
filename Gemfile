@@ -38,13 +38,13 @@ gem 'clean_pagination'
 gem 'virtus'
 
 #uploading images
-gem "sinatra", github: "sinatra/sinatra", branch: "master"
-gem "refile", github: 'refile/refile', :branch => 'master'
-gem "refile-mini_magick", :branch => 'master'
-gem 'refile-memory'
+# gem "sinatra", github: "sinatra/sinatra", branch: "master"
+# gem "refile", github: 'refile/refile', :branch => 'master'
+# gem "refile-mini_magick", :branch => 'master'
+# gem 'refile-memory'
 
 # tags
-gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on', :branch => 'master'
+# gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on', :branch => 'master'
 
 #statemachine
 gem 'aasm'
@@ -57,5 +57,7 @@ gem 'rails_admin_tag_list'
 # gem 'rails_admin_aasm'
 # gem 'rails_admin_toggleable'
 
+#telegram bot
+gem 'telegram-bot-ruby'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

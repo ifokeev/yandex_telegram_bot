@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160311204151) do
+ActiveRecord::Schema.define(version: 20160312213155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,10 +35,24 @@ ActiveRecord::Schema.define(version: 20160311204151) do
     t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
   end
 
+  create_table "state_items", force: :cascade do |t|
+    t.string  "path"
+    t.integer "depth"
+    t.string  "header"
+    t.text    "description"
+    t.string  "type"
+    t.index ["depth"], name: "index_state_items_on_depth", using: :btree
+    t.index ["header"], name: "index_state_items_on_header", using: :btree
+    t.index ["path"], name: "index_state_items_on_path", using: :btree
+    t.index ["type"], name: "index_state_items_on_type", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
-    t.integer "telegram_id"
+    t.integer "telegram_user_id"
+    t.integer "telegram_chat_id"
     t.string  "first_name"
     t.string  "last_name"
+    t.string  "state_item_key"
   end
 
   add_foreign_key "locations", "users"

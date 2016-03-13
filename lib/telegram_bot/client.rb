@@ -10,13 +10,13 @@ module TelegramBot
         @client ||= Telegram::Bot::Client.new(TOKEN)
       end
 
-      def listen 
+      def start_listen 
         puts "listening longpooling"
 
         client.listen do |message| 
           puts "new message"
 
-          process(message)
+          handle(message)
         end
       end
 
@@ -29,24 +29,12 @@ module TelegramBot
         message = update.message
         message_id = message.message_id 
 
-        process(message)
+        handle(message)
       end
 
-      def process(message)
-        if message.location
-          TelegramBot::Commands::SetLocation.execute(message)
-          TelegramBot::Commands::GetLocation.execute(message)
-        end
-
-        case message.text
-        when '/start'
-          TelegramBot::Commands::Start.execute(message)
-
-        when '/location'
-          TelegramBot::Commands::GetLocation.execute(message)
-        end
+      def handle(message)
+        TelegramBot::Message.handle(message)
       end
-
     end
   end
 end

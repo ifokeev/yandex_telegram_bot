@@ -3,7 +3,7 @@ class Api::ApplicationController < ActionController::API
 
   INCORRECT_PARAMETER_ERRORS = [
     ActionController::ParameterMissing,
-    Virtus::CoercionError
+    # Virtus::CoercionError
   ]
 
   rescue_from *INCORRECT_PARAMETER_ERRORS, with: :_wrong_parameter

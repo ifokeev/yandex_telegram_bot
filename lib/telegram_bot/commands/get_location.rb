@@ -2,7 +2,7 @@ module TelegramBot
   module Commands
     class GetLocation < Base
       def execute
-        location = User.telegram(telegram_user.id).take.locations.last
+        location = User.identity(message.from.id, message.chat.id).take.locations.last
 
         if location
           send_location(location)

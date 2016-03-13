@@ -19,14 +19,14 @@ group :development do
   gem 'bullet'
 
   #for chef
-  gem 'knife-solo'
-  gem 'librarian-chef'
-
-  gem 'capistrano', :branch => 'master'
-  gem 'capistrano-rails'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rbenv'
-  gem 'capistrano-rails-console'
+  # gem 'knife-solo'
+  # gem 'librarian-chef'
+  #
+  # gem 'capistrano', :branch => 'master'
+  # gem 'capistrano-rails'
+  # gem 'capistrano-bundler'
+  # gem 'capistrano-rbenv'
+  # gem 'capistrano-rails-console'
 end
 
 gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
@@ -35,7 +35,7 @@ gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
 gem 'clean_pagination'
 
 #smart wrapper
-gem 'virtus'
+# gem 'virtus'
 
 #uploading images
 # gem "sinatra", github: "sinatra/sinatra", branch: "master"
@@ -47,7 +47,10 @@ gem 'virtus'
 # gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on', :branch => 'master'
 
 #statemachine
-gem 'aasm'
+# gem 'aasm'
+
+#cart redit
+gem 'cartman'
 
 #admin
 gem 'rack-pjax', github: 'afcapel/rack-pjax', branch: 'master'

@@ -4,7 +4,8 @@ module TelegramBot
       def execute
         location = message.location
 
-        user = User.telegram(telegram_user.id).take.locations.new(latitude: location.latitude, longitude: location.longitude)
+        user = User.identity(message.from.id, message.chat.id)
+          .take.locations.new(latitude: location.latitude, longitude: location.longitude)
 
         if user.save
           say(I18n.t('location.saved'))
